@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Link, Switch } from "react-router-dom";
 import Home from "./Home";
+import Zomato from '../components/apps/ZomatoApp';
 import Resources from "./Resources";
 
 const Sidebar = () => {
@@ -15,6 +16,9 @@ const Sidebar = () => {
             <Link to="/functionalcomponent">Functional Component</Link>
           </li>
           <li>
+            <Link to="/zomato">Search for restaurants in your city with the Zomato Api!></Link>
+          </li>
+          <li>
             <Link to="/resources">Resources</Link>
           </li>
         </ul>
@@ -27,6 +31,7 @@ const Sidebar = () => {
           <Route exact path="/resources">
             <Resources />
           </Route>
+          <Route exact path="/zomato"><ZomatoApp /></Route>
           <Route exact path="/">
             <Home />
           </Route>
