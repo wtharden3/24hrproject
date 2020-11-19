@@ -5,12 +5,12 @@ const Home = () => {
   return (
     <div className="main">
       <div className="mainDiv">
-        <h1>Welcome to React Fundamentals at Eleven Fifty</h1>
+        <h1>Team Teamwork!</h1>
 
         <p>
-          This ap is intended to be a starter/tutorial app for your upcoming
-          project and a larning sandbox for you in months and years to come
+          Khushman Jauhal, Sam Wolf, Whitney Harden
         </p>
+        <p>Teamwork makes the Dreamwork</p>
       </div>
     </div>
   );

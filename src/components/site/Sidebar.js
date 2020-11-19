@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Link, Switch } from "react-router-dom";
 import Home from "./Home";
+import NasaApp from '../apps/NasaApp';
 import Resources from "./Resources";
 
 const Sidebar = () => {
@@ -15,6 +16,9 @@ const Sidebar = () => {
             <Link to="/functionalcomponent">Functional Component</Link>
           </li>
           <li>
+            <Link to="/nasa">NASA</Link>
+          </li>
+          <li>
             <Link to="/resources">Resources</Link>
           </li>
         </ul>
@@ -23,6 +27,9 @@ const Sidebar = () => {
         <Switch>
           <Route exact path="/home">
             <Home />
+          </Route>
+          <Route exact path='/nasa'>
+            <NasaApp />
           </Route>
           <Route exact path="/resources">
             <Resources />
