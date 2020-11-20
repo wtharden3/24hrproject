@@ -13,7 +13,19 @@ const NasaApp = () => {
   const [date, setDate] = useState('');
   const [url, setUrl] = useState('')
 
-  const [results, setResults] = useState('');
+
+  const findLocation = () => {
+    if(navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position)=>{
+        setLat(position.coords.latitude);
+        setLon(position.coords.longitude);
+      })
+    } else {
+      console.log('your browser does not support geolocation')
+    }
+  }
+
+  //const [results, setResults] = useState('');
 
   // useEffect (() => {
 
@@ -50,6 +62,7 @@ const NasaApp = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    findLocation();
     setUrl(`${baseURL}?lon=${lon}&lat=${lat}&date=${date}&api_key=${api_key}`);
     fetchResults();
     console.log('new url---> ', url);
@@ -60,25 +73,8 @@ const NasaApp = () => {
       <div className="mainDiv">
         <h1>NASA</h1>
         <form onSubmit={e => handleSubmit(e)}>
-          <span>Enter a location</span>
+          <span>Enter a Date</span>
           <br />
-          <br />
-          <label htmlFor="locationLat">Lat: </label>
-          <input
-            type="text"
-            name="locationLat"
-            id="locationLat"
-            onChange={e => setLat(e.target.value)}
-            required
-          />
-          <br />
-          <label htmlFor="locationLon">Lon: </label>
-          <input
-            type="text"
-            name="locationLon"
-            onChange={e => setLon(e.target.value)}
-            required
-          />
           <br />
           <label htmlFor="date">Date: </label>
           <input
