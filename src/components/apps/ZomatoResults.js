@@ -22,39 +22,12 @@ return (
         )
         })}
         <div>
-            <button onClick={(e) => props.changePageNumber(e, 'down')}>Previous 10</button>
-            <button onClick={(e) => props.changePageNumber(e, 'up')}>Next 10</button>
+            <button onClick={(e) => props.changePageNumber(e, 'down')}>Take me back!</button>
+            <button onClick={(e) => props.changePageNumber(e, 'up')}>I'm too indecisive for this!</button>
         </div>
     </div>
     </div>
 )
 }
-
-// class Tracker extends ZomApp {
-//     constructor(props) {
-//     super(props);
-//     this.state = {
-//         lat: null,
-//         lng: null,
-//     }
-//     }
-//     componentWillMount() {
-
-//     navigator.geolocation.getCurrentPosition(position => {
-//         this.setState({ lat: position.coords.latitude, lng: position.coords.longitude });
-//     }, err => console.log(err)
-//     );
-//     }
-//     render() {
-
-//     return (
-//         <div >
-//         <h1>Current Position:</h1>
-//         <p>Latitude: {this.state.lat}</p>
-//         <p>Longitude: {this.state.lng}</p>
-//         </div>
-//     );
-//     }
-// }
 
 export default ZomatoResults;
