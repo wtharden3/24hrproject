@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Link, Switch } from "react-router-dom";
 import Home from "./Home";
-import NasaApp from "../apps/NasaApp";
+import NasaApp from '../apps/Nasa/NasaApp';
 import ZomApp from "../apps/ZomatoApp";
 import OpenWeatherApp from "../apps/OpenWeatherApp";
 
