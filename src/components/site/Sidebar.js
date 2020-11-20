@@ -1,7 +1,9 @@
 import React from "react";
 import { Route, Link, Switch } from "react-router-dom";
 import Home from "./Home";
-import Resources from "./Resources";
+import NasaApp from '../apps/Nasa/NasaApp';
+import ZomApp from "../apps/ZomatoApp";
+import OpenWeatherApp from "../apps/OpenWeatherApp";
 
 const Sidebar = () => {
   return (
@@ -12,10 +14,13 @@ const Sidebar = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/functionalcomponent">Functional Component</Link>
+            <Link to="/nasa">NASA</Link>
           </li>
           <li>
-            <Link to="/resources">Resources</Link>
+            <Link to="/zomato">Zomato</Link>
+          </li>
+          <li>
+            <Link to="/openweatherapp">OpenWeatherApp</Link>
           </li>
         </ul>
       </div>
@@ -24,11 +29,17 @@ const Sidebar = () => {
           <Route exact path="/home">
             <Home />
           </Route>
-          <Route exact path="/resources">
-            <Resources />
+          <Route exact path="/nasa">
+            <NasaApp />
+          </Route>
+          <Route exact path="/zomato">
+            <ZomApp />
           </Route>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route exact path="/openweatherapp">
+            <OpenWeatherApp />
           </Route>
         </Switch>
       </div>
