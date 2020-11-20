@@ -22,8 +22,9 @@ const OpenWeatherApp = () => {
     setResponseObj({});
     setLoading(true);
 
-    let uriEncodedCity = encodeURIComponent(cityName);
-    fetch(`api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${key}`)
+    fetch(
+      `https://api.openweathermap.org/data/2.5/weather?units=${unit}&q=${cityName}&appid=${key}`
+    )
       .then((response) => response.json())
       .then((response) => {
         if (response.cod !== 200) {
@@ -70,12 +71,7 @@ const OpenWeatherApp = () => {
           />
           Celcius
         </label>
-        <input
-          type="text"
-          placeholder="Enter City"
-          maxLength="50"
-          className={classes.textInput}
-        />
+
         <label className={classes.Radio}>
           <label className={classes.Radio}>
             <button className={classes.Button} type="submit">
@@ -83,8 +79,6 @@ const OpenWeatherApp = () => {
             </button>
           </label>
         </label>
-        <button type="submit">Get Forecast</button>
-
         <Conditions responseObj={responseObj} />
       </form>
     </div>

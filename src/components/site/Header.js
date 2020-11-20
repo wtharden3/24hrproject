@@ -5,10 +5,10 @@ const Header = () => {
   return (
     <header>
       <Navbar className="header">
-        <NavbarBrand href="/">React Library</NavbarBrand>
+        <NavbarBrand href="/">Team Teamwork!!</NavbarBrand>
         <Nav className="ml-auto" navbar>
           <NavItem>
-            <NavLink href="https://github.com/yourhandle/yourrepoforthisapp">
+            <NavLink href="https://github.com/wtharden3/24hrproject">
               Github
             </NavLink>
           </NavItem>
