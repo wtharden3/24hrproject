@@ -13,8 +13,6 @@ const NasaApp = () => {
   const [date, setDate] = useState('');
   const [url, setUrl] = useState('')
 
-  
-
 
   const findLocation = () => {
     if(navigator.geolocation) {
