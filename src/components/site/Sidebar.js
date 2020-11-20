@@ -1,8 +1,9 @@
-import React from "react";
-import { Route, Link, Switch } from "react-router-dom";
-import Home from "./Home";
-import Zomato from '../components/apps/ZomatoApp';
-import Resources from "./Resources";
+import React from 'react';
+import { Route, Link, Switch } from 'react-router-dom';
+import Home from './Home';
+import NasaApp from '../apps/NasaApp';
+import ZomApp from '../apps/ZomatoApp';
+import Resources from './Resources';
 
 const Sidebar = () => {
   return (
@@ -16,7 +17,10 @@ const Sidebar = () => {
             <Link to="/functionalcomponent">Functional Component</Link>
           </li>
           <li>
-            <Link to="/zomato">Search for restaurants in your city with the Zomato Api!></Link>
+            <Link to="/nasa">NASA</Link>
+          </li>
+          <li>
+            <Link to="/zomato">Zomato</Link>
           </li>
           <li>
             <Link to="/resources">Resources</Link>
@@ -28,10 +32,15 @@ const Sidebar = () => {
           <Route exact path="/home">
             <Home />
           </Route>
+          <Route exact path="/nasa">
+            <NasaApp />
+          </Route>
           <Route exact path="/resources">
             <Resources />
           </Route>
-          <Route exact path="/zomato"><ZomatoApp /></Route>
+          <Route exact path="/zomato">
+            <ZomApp />
+          </Route>
           <Route exact path="/">
             <Home />
           </Route>
