@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import ZomatoResults from './ZomatoResults';
-const baseURL = 'https://developers.zomato.com/api/v2.1/cities?q=Indianapolis'
+const baseURL = 'https://developers.zomato.com/api/v2.1/search'
 const key = 'c84cd3b616dbd6abfc7e1d659a762b20'
 
 const ZomApp = () => {
@@ -55,4 +55,32 @@ const ZomApp = () => {
     )
 }
 
+class Tracker extends ZomApp {
+    constructor(props) {
+    super(props);
+    this.state = {
+        lat: null,
+        lng: null,
+    }
+    }
+    componentWillMount() {
+
+    navigator.geolocation.getCurrentPosition(position => {
+        this.setState({ lat: position.coords.latitude, lng: position.coords.longitude });
+    }, err => console.log(err)
+    );
+    }
+    render() {
+
+    return (
+        <div >
+        <h1>Current Position:</h1>
+        <p>Latitude: {this.state.lat}</p>
+        <p>Longitude: {this.state.lng}</p>
+        </div>
+    );
+    }
+}
+
 export default ZomApp;
+
