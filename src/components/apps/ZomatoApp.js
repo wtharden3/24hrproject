@@ -42,10 +42,17 @@ const ZomApp = () => {
         <div className="main">
             <div className="mainDiv">
                 <form onSubmit={(e) => handleSubmit(e)}>
-                    <span>Enter the name of your CITY to find restaurants in your area! : </span>
-
+                    <span>Enter the name of your city to find restaurants in your area! : </span>
+                    <input type="text" name="search" onChange={(e) => setSearch(e.target.value)} required />
+                    <br />
+                    <button className="submit">Show me the food!</button>
                 </form>
+                {
+                    results.length > 0 ? <ZomatoResults results ={ results } changePage={ changePageNumber } /> : null
+                }
             </div>
         </div>
     )
 }
+
+export default ZomApp;
