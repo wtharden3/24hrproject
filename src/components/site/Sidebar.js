@@ -2,6 +2,8 @@ import React from "react";
 import { Route, Link, Switch } from "react-router-dom";
 import Home from "./Home";
 import Resources from "./Resources";
+import OpenWeatherApp from "../apps/OpenWeatherApp";
+import Logo from "./components/Logo/Logo";
 
 const Sidebar = () => {
   return (
@@ -17,6 +19,9 @@ const Sidebar = () => {
           <li>
             <Link to="/resources">Resources</Link>
           </li>
+          <li>
+            <Link to="/openweatherapp">OpenWeatherApp</Link>
+          </li>
         </ul>
       </div>
       <div className="sidebar-route">
@@ -29,6 +34,9 @@ const Sidebar = () => {
           </Route>
           <Route exact path="/">
             <Home />
+          </Route>
+          <Route exact path="/openweatherapp">
+            <OpenWeatherApp />
           </Route>
         </Switch>
       </div>
