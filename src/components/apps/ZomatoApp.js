@@ -5,7 +5,7 @@ const key = 'c84cd3b616dbd6abfc7e1d659a762b20'
 
 const ZomApp = () => {
     const [search, setSearch ] = useState('');
-    const [pageNumber, setPageNumber ] = usestate('0');
+    const [pageNumber, setPageNumber ] = useState('0');
     const [results, setResults ] = useState([]);
 
     const fetchResults = () => {
