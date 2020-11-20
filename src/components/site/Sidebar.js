@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Link, Switch } from "react-router-dom";
 import Home from "./Home";
 import NasaApp from '../apps/NasaApp';
+import ZomApp from '../apps/ZomatoApp';
 import Resources from "./Resources";
 
 const Sidebar = () => {
@@ -17,6 +18,7 @@ const Sidebar = () => {
           </li>
           <li>
             <Link to="/nasa">NASA</Link>
+            <Link to="/zomato">Search for restaurants in your city with the Zomato Api!</Link>
           </li>
           <li>
             <Link to="/resources">Resources</Link>
@@ -34,6 +36,7 @@ const Sidebar = () => {
           <Route exact path="/resources">
             <Resources />
           </Route>
+          <Route exact path="/zomato"><ZomApp /></Route>
           <Route exact path="/">
             <Home />
           </Route>
